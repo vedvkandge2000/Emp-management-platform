@@ -20,7 +20,7 @@ public class EmployeeController {
         return ResponseEntity.ok(employeeService.getAllEmployees());
     }
 
-    @GetMapping("/employee/{empId}")
+    @GetMapping("/employees/{empId}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable("empId") Long empId) {
         return ResponseEntity.ok(employeeService.getEmployeeById(empId));
     }
@@ -43,7 +43,7 @@ public class EmployeeController {
         return ResponseEntity.ok(employeeService.updateEmployee(employee));
     }
 
-    @DeleteMapping("/employee/{empId}")
+    @DeleteMapping("/employees/{empId}")
     public ResponseEntity<String> deleteEmployee(@PathVariable("empId") Long empId) {
         Employee employee = employeeService.getEmployeeById(empId);
         if(employee == null)
